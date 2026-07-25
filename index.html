@@ -567,6 +567,18 @@
 <h3>2.1 Sources of Shariah</h3>
 <div class="shariah-tree">
   
+  <!-- CSS STYLE UNTUK ANIMASI HANYA PADA KOTAK KITA -->
+  <style>
+    .source-card {
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+    }
+    .source-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+  </style>
+
   <!-- SECTION: PRIMARY SOURCES -->
   <div style="margin-bottom: 2rem;">
     <div class="tree-pill gold" style="display:inline-block; margin-bottom: 0.5rem;">Primary Sources</div>
@@ -575,12 +587,12 @@
     <!-- Grid Kotak Primary (Hijau Cair) -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
       
-      <div style="background-color: #e8f5e9; border: 1px solid #c8e6c9; border-radius: 8px; padding: 1rem;">
+      <div class="source-card" style="background-color: #e8f5e9; border: 1px solid #c8e6c9; border-radius: 10px; padding: 1.2rem;">
         <strong style="color: #2e7d32; font-size: 1.05rem; display: block; margin-bottom: 0.4rem;">Al-Qur'an</strong>
         <p style="margin: 0; font-size: 0.88rem; color: #333; line-height: 1.4;">The primary divine text providing absolute principles on commerce, prohibiting riba, and promoting fair trading.</p>
       </div>
 
-      <div style="background-color: #e8f5e9; border: 1px solid #c8e6c9; border-radius: 8px; padding: 1rem;">
+      <div class="source-card" style="background-color: #e8f5e9; border: 1px solid #c8e6c9; border-radius: 10px; padding: 1.2rem;">
         <strong style="color: #2e7d32; font-size: 1.05rem; display: block; margin-bottom: 0.4rem;">As-Sunnah</strong>
         <p style="margin: 0; font-size: 0.88rem; color: #333; line-height: 1.4;">The traditions and sayings of Prophet Muhammad (PBUH) that explain and clarify practical business dealings.</p>
       </div>
@@ -596,41 +608,41 @@
     <!-- Grid Kotak Secondary (Kuning Cair) -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
       
-      <div style="background-color: #fffde7; border: 1px solid #fff59d; border-radius: 8px; padding: 1rem;">
+      <div class="source-card" style="background-color: #fffde7; border: 1px solid #fff59d; border-radius: 10px; padding: 1.2rem;">
         <strong style="color: #f57f17; font-size: 1rem; display: block; margin-bottom: 0.4rem;">Ijma' (consensus)</strong>
         <p style="margin: 0; font-size: 0.88rem; color: #333; line-height: 1.4;">Unanimous agreement among qualified Shariah scholars on a specific legal issue.</p>
       </div>
 
-      <div style="background-color: #fffde7; border: 1px solid #fff59d; border-radius: 8px; padding: 1rem;">
+      <div class="source-card" style="background-color: #fffde7; border: 1px solid #fff59d; border-radius: 10px; padding: 1.2rem;">
         <strong style="color: #f57f17; font-size: 1rem; display: block; margin-bottom: 0.4rem;">Qiyas (analogy)</strong>
         <p style="margin: 0; font-size: 0.88rem; color: #333; line-height: 1.4;">Applying an existing divine ruling to a new situation based on shared underlying reasons ('illah).</p>
       </div>
 
-      <div style="background-color: #fffde7; border: 1px solid #fff59d; border-radius: 8px; padding: 1rem;">
+      <div class="source-card" style="background-color: #fffde7; border: 1px solid #fff59d; border-radius: 10px; padding: 1.2rem;">
         <strong style="color: #f57f17; font-size: 1rem; display: block; margin-bottom: 0.4rem;">Istihsan (juristic preference)</strong>
         <p style="margin: 0; font-size: 0.88rem; color: #333; line-height: 1.4;">Choosing a more suitable solution to avoid hardship or unfairness in transactions.</p>
       </div>
 
-      <div style="background-color: #fffde7; border: 1px solid #fff59d; border-radius: 8px; padding: 1rem;">
+      <div class="source-card" style="background-color: #fffde7; border: 1px solid #fff59d; border-radius: 10px; padding: 1.2rem;">
         <strong style="color: #f57f17; font-size: 1rem; display: block; margin-bottom: 0.4rem;">'Urf (custom)</strong>
         <p style="margin: 0; font-size: 0.88rem; color: #333; line-height: 1.4;">Recognized local business practices that do not contradict any Islamic principles.</p>
       </div>
-
-      <div style="background-color: #fffde7; border: 1px solid #fff59d; border-radius: 8px; padding: 1rem;">
+      <div class="source-card" style="background-color: #fffde7; border: 1px solid #fff59d; border-radius: 10px; padding: 1.2rem;">
         <strong style="color: #f57f17; font-size: 1rem; display: block; margin-bottom: 0.4rem;">Istishab (presumption of continuity)</strong>
         <p style="margin: 0; font-size: 0.88rem; color: #333; line-height: 1.4;">Presumption that a past legal state continues to exist until proven otherwise (e.g., contracts remain valid unless proven void).</p>
       </div>
-<div style="background-color: #fffde7; border: 1px solid #fff59d; border-radius: 8px; padding: 1rem;">
+
+      <div class="source-card" style="background-color: #fffde7; border: 1px solid #fff59d; border-radius: 10px; padding: 1.2rem;">
         <strong style="color: #f57f17; font-size: 1rem; display: block; margin-bottom: 0.4rem;">Maslahah al-Mursalah (public interest)</strong>
         <p style="margin: 0; font-size: 0.88rem; color: #333; line-height: 1.4;">Public interest decisions that bring benefit or prevent harm to society where no specific text exists.</p>
       </div>
 
-      <div style="background-color: #fffde7; border: 1px solid #fff59d; border-radius: 8px; padding: 1rem;">
+      <div class="source-card" style="background-color: #fffde7; border: 1px solid #fff59d; border-radius: 10px; padding: 1.2rem;">
         <strong style="color: #f57f17; font-size: 1rem; display: block; margin-bottom: 0.4rem;">Sadd al-Zara'i (blocking the means)</strong>
         <p style="margin: 0; font-size: 0.88rem; color: #333; line-height: 1.4;">Blocking lawful actions that could inevitably lead to an unlawful or prohibited outcome (e.g., preventing hidden riba).</p>
       </div>
 
-      <div style="background-color: #fffde7; border: 1px solid #fff59d; border-radius: 8px; padding: 1rem;">
+      <div class="source-card" style="background-color: #fffde7; border: 1px solid #fff59d; border-radius: 10px; padding: 1.2rem;">
         <strong style="color: #f57f17; font-size: 1rem; display: block; margin-bottom: 0.4rem;">Qaul as-Sahabi (companions' fatwa)</strong>
         <p style="margin: 0; font-size: 0.88rem; color: #333; line-height: 1.4;">The legal opinions or rulings given by the Companions of Prophet Muhammad (PBUH) on Islamic jurisprudence.</p>
       </div>
@@ -638,6 +650,7 @@
     </div>
   </div>
 
+</div>
 </div>
 
   <h3 style="margin:2.4rem 0 .4rem; color:var(--emerald-mid); font-size:1.05rem;">2.2 The Shariah Governance Framework</h3>
