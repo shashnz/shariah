@@ -1,3 +1,101 @@
+<!-- BUBBLES / CUSTOM HOMEPAGE BANNER -->
+<style>
+  /* 1. Latar Belakang Banner Hijau Emerald Dynamic */
+  .hero-banner {
+    background: linear-gradient(135deg, #0b2b21 0%, #13523c 50%, #1e7a58 100%);
+    color: #ffffff;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* 2. Kesan Cahaya Berkelip/Glow pada Tajuk */
+  .glow-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #ffffff, #a7f3d0, #ffffff);
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s linear infinite;
+  }
+
+  @keyframes shine {
+    to { background-position: 200% center; }
+  }
+
+  /* 3. Teks Subtitle */
+  .hero-subtitle {
+    font-size: 1.1rem;
+    color: #e2e8f0;
+    margin-bottom: 25px;
+    opacity: 0.9;
+  }
+
+  /* 4. Butang Terapung & Berkelip Glow (Pulse) */
+  .cta-button {
+    background: #00e676;
+    color: #042f2e;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 230, 118, 0.4);
+    animation: floatPulse 2s infinite alternate ease-in-out;
+    transition: all 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background: #33eb8b;
+    transform: scale(1.08);
+  }
+
+  @keyframes floatPulse {
+    0% {
+      transform: translateY(0px) scale(1);
+      box-shadow: 0 0 10px rgba(0, 230, 118, 0.4);
+    }
+    100% {
+      transform: translateY(-6px) scale(1.05);
+      box-shadow: 0 10px 25px rgba(0, 230, 118, 0.8);
+    }
+  }
+
+  /* 5. Efek Sparkle Berkelip kat Latar Belakang */
+  .sparkle {
+    position: absolute;
+    font-size: 1.5rem;
+    animation: blink 1.5s infinite alternate;
+  }
+  .s1 { top: 15%; left: 10%; animation-delay: 0s; }
+  .s2 { bottom: 20%; right: 12%; animation-delay: 0.7s; }
+
+  @keyframes blink {
+    0% { opacity: 0.2; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1.2); }
+  }
+</style>
+
+<!-- KOD STRUKTUR HOMEPAGE -->
+<div class="hero-banner">
+  <!-- Bintang Sparkle Berkelip -->
+  <span class="sparkle s1">✨</span>
+  <span class="sparkle s2">✨</span>
+
+  <h1 class="glow-title">Selamat Datang ke ShaFun.co ✨</h1>
+  <p class="hero-subtitle">Koleksi Terkini & Pilihan Estetik Terbaik Khas Untuk Anda!</p>
+
+  <button class="cta-button">Lihat Koleksi Sekarang 🛍️</button>
+</div>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1191,28 +1289,119 @@
 </section>
 
 <!-- QUIZ -->
-<section id="quiz" class="tint-gold">
-  <div class="section-head">
-    <p class="eyebrow"><span class="num">•</span>Test Yourself</p>
-    <h2>Quick Shariah compliance quiz</h2>
-    <p>Five questions to check what stuck from this page.</p>
+<!-- SECTION: QUIZ (VIBES CERIA & FRESH) -->
+<section id="quiz" style="
+  position: relative;
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  padding: 3.5rem 2rem;
+  border-radius: 20px;
+  margin: 3rem 0;
+  color: #1e293b;
+  box-shadow: 0 15px 35px rgba(56, 239, 125, 0.25);
+">
+
+  <!-- HEADER QUIZ CERIA -->
+  <div style="text-align: center; margin-bottom: 2.5rem;">
+    <span style="
+      background: #ffffff; 
+      color: #0f766e; 
+      font-size: 0.8rem; 
+      font-weight: 800; 
+      padding: 6px 18px; 
+      border-radius: 20px; 
+      text-transform: uppercase; 
+      letter-spacing: 1.5px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    ">🎯 Test Your Knowledge</span>
+    
+    <h2 style="
+      font-size: 2.3rem; 
+      color: #ffffff; 
+      margin-top: 0.8rem; 
+      font-weight: 800;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    ">Quick Shariah Knowledge Check! ✨</h2>
+    
+    <p style="
+      max-width: 600px; 
+      margin: 0.5rem auto 0; 
+      color: #f0fdf4; 
+      font-size: 1rem; 
+      font-weight: 500;
+    ">
+      Uji kefahaman anda tentang konsep Mudharabah, Murabahah, Tawarruq dan Tatatertib Shariah!
+    </p>
   </div>
-  <div class="quiz-box" id="quizBox">
-    <div id="quizLive">
-      <h3 id="qTitle">Question</h3>
-      <p class="progress" id="qProgress">Question 1 of 5</p>
-      <p class="q-text" id="qText"></p>
-      <div class="q-options" id="qOptions"></div>
-      <p class="q-feedback" id="qFeedback"></p>
+
+  <!-- KAD QUIZ CONTAINER (WHITE & CLEAN) -->
+  <div style="
+    max-width: 750px; 
+    margin: 0 auto; 
+    background: #ffffff; 
+    padding: 2.5rem; 
+    border-radius: 16px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  ">
+
+    <!-- SOALAN 1 -->
+    <div style="margin-bottom: 2rem;">
+      <h3 style="font-size: 1.1rem; color: #0f172a; margin-bottom: 1rem; font-weight: 700;">
+        1. Dalam kontrak <span style="color: #0d9488;">Mudharabah</span>, sekiranya berlaku kerugian kewangan (tanpa kecuaian usahawan), siapakah yang menanggung kerugian tersebut?
+      </h3>
+      <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+        <button onclick="checkAnswer(this, false)" style="padding: 12px 16px; text-align: left; border: 2px solid #e2e8f0; border-radius: 10px; background: #f8fafc; font-weight: 600; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.borderColor='#11998e';" onmouseout="this.style.borderColor='#e2e8f0';">A) Usahawan (Mudarib) sahaja 100%</button>
+        <button onclick="checkAnswer(this, true)" style="padding: 12px 16px; text-align: left; border: 2px solid #e2e8f0; border-radius: 10px; background: #f8fafc; font-weight: 600; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.borderColor='#11998e';" onmouseout="this.style.borderColor='#e2e8f0';">B) Pemodal (Rabb-ul-Mal) sahaja 100% ✨</button>
+        <button onclick="checkAnswer(this, false)" style="padding: 12px 16px; text-align: left; border: 2px solid #e2e8f0; border-radius: 10px; background: #f8fafc; font-weight: 600; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.borderColor='#11998e';" onmouseout="this.style.borderColor='#e2e8f0';">C) Dibagi sama rata 50:50</button>
+      </div>
     </div>
-    <div id="quizResult" class="q-result" style="display:none;">
-      <h3>Quiz complete</h3>
-      <div class="score" id="qScore"></div>
-      <p id="qScoreMsg" style="color:#dfe8e2; font-size:.9rem;"></p>
-      <button class="q-restart" onclick="startQuiz()">Try again</button>
+
+    <hr style="border: none; border-top: 1px dashed #cbd5e1; margin: 1.5rem 0;">
+
+    <!-- SOALAN 2 -->
+    <div style="margin-bottom: 1.5rem;">
+      <h3 style="font-size: 1.1rem; color: #0f172a; margin-bottom: 1rem; font-weight: 700;">
+        2. Apakah langkah yang WAJIB diambil oleh bank Islam di Malaysia sekiranya memperolehi pendapatan tidak patuh Shariah (SNC)?
+      </h3>
+      <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+        <button onclick="checkAnswer(this, false)" style="padding: 12px 16px; text-align: left; border: 2px solid #e2e8f0; border-radius: 10px; background: #f8fafc; font-weight: 600; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.borderColor='#11998e';" onmouseout="this.style.borderColor='#e2e8f0';">A) Dimasukkan ke dalam keuntungan dividen pemegang saham</button>
+        <button onclick="checkAnswer(this, true)" style="padding: 12px 16px; text-align: left; border: 2px solid #e2e8f0; border-radius: 10px; background: #f8fafc; font-weight: 600; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.borderColor='#11998e';" onmouseout="this.style.
+          borderColor='#e2e8f0';">B) Diasingkan dan disalurkan ke badan kebajikan (Purification) ✨</button>
+        <button onclick="checkAnswer(this, false)" style="padding: 12px 16px; text-align: left; border: 2px solid #e2e8f0; border-radius: 10px; background: #f8fafc; font-weight: 600; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.borderColor='#11998e';" onmouseout="this.style.borderColor='#e2e8f0';">C) Dipulangkan semula kepada Bank Negara Malaysia</button>
+      </div>
     </div>
+
+    <!-- MESEJ MAKLUM BALAS -->
+    <div id="quizResult" style="display: none; margin-top: 1.5rem; padding: 1rem; border-radius: 10px; text-align: center; font-weight: 700;"></div>
+
   </div>
+
 </section>
+
+<!-- JAVASCRIPT UNTUK RESPONS JAWAPAN -->
+<script>
+  function checkAnswer(btn, isCorrect) {
+    const parentDiv = btn.parentElement;
+    const buttons = parentDiv.querySelectorAll('button');
+    
+    // Reset warna pilihan
+    buttons.forEach(b => {
+      b.style.background = '#f8fafc';
+      b.style.color = '#1e293b';
+      b.style.borderColor = '#e2e8f0';
+    });
+
+    if(isCorrect) {
+      btn.style.background = '#dcfce7';
+      btn.style.borderColor = '#22c55e';
+      btn.style.color = '#15803d';
+    } else {
+      btn.style.background = '#fee2e2';
+      btn.style.borderColor = '#ef4444';
+      btn.style.color = '#b91c1c';
+    }
+  }
+</script>
+  
 <!-- MINI MUDHARABAH PROFIT-SPLIT CALCULATOR -->
 <div style="
   background: #0f2017;
