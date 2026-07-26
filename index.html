@@ -1098,7 +1098,7 @@
       box-shadow: 0 8px 20px rgba(15,32,23,0.15);
       border-left: 5px solid #ffd700;
       transition: transform 0.3s ease;
-    " onmouseover="this.style.transform='translateY(-5px)';" onmouseout="this.style.transform='translateY(0)';">
+    onmouseover="this.style.transform='translateY(-5px)';" onmouseout="this.style.transform='translateY(0)';">
       <div style="font-size: 2.5rem; font-weight: 900; color: #ffd700; letter-spacing: -1px;">RM19.2m</div>
       <div style="font-weight: 700; font-size: 1.05rem; margin-top: 0.3rem;">Total SNC Income (2015–2020)</div>
       <p style="color: #94a3b8; font-size: 0.85rem; margin-top: 0.5rem; line-height: 1.4;">
@@ -1115,7 +1115,7 @@
       box-shadow: 0 8px 20px rgba(15,32,23,0.15);
       border-left: 5px solid #ffd700;
       transition: transform 0.3s ease;
-    " onmouseover="this.style.transform='translateY(-5px)';" onmouseout="this.style.transform='translateY(0)';">
+     onmouseover="this.style.transform='translateY(-5px)';" onmouseout="this.style.transform='translateY(0)';">
       <div style="font-size: 2.5rem; font-weight: 900; color: #ffd700; letter-spacing: -1px;">2016</div>
       <div style="font-weight: 700; font-size: 1.05rem; margin-top: 0.3rem;">Peak Reporting Year</div>
       <p style="color: #94a3b8; font-size: 0.85rem; margin-top: 0.5rem; line-height: 1.4;">
@@ -1677,8 +1677,105 @@
       : "Worth a re-read of the Main Discussion section.";
     document.getElementById('qScoreMsg').textContent = msg;
   }
+// Data Soalan Quiz
+const quizData = [
+  {
+    question: "What is the primary foundation that distinguishes Islamic banking from conventional banking?",
+    options: ["Interest rates", "Shariah compliance and prohibition of Riba", "Maximizing profit at all costs", "Government ownership"],
+    correct: 1
+  },
+  {
+    question: "Which of the following is strictly prohibited in Shariah-compliant transactions?",
+    options: ["Profit sharing", "Gharar (Uncertainty) & Riba", "Asset-backed financing", "Ethical investments"],
+    correct: 1
+  },
+  {
+    question: "In a Mudarabah contract, who bears the financial loss?",
+    options: ["The Mudarib (Manager)", "Both equally", "The Rabb-ul-Mal (Investor)", "The Central Bank"],
+    correct: 2
+  }
+];
 
-  startQuiz();
+let currentQ = 0;
+let score = 0;
+let canAnswer = true;
+
+function renderQuestion() {
+  canAnswer = true;
+  const q = quizData[currentQ];
+  
+  // Update Progress
+  document.getElementById('quizProgress').textContent = Question ${currentQ + 1} of ${quizData.length};
+  
+  // Dynamic HTML dengan UI Aesthetic Gold/Dark
+  let html = `
+    <h3 style="color: #ffd700; font-size: 1.3rem; margin-bottom: 20px; font-family: Georgia, serif;">${q.question}</h3>
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+  `;
+
+  q.options.forEach((opt, idx) => {
+    html += `
+      <button onclick="checkAnswer(${idx}, this)" style="
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        color: #ffffff;
+        padding: 14px 20px;
+        border-radius: 10px;
+        text-align: left;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        outline: none;
+      ">${opt}</button>
+    `;
+  });
+
+  html += </div>;
+  document.getElementById('quizLive').innerHTML = html;
+}
+
+function checkAnswer(selectedIdx, btn) {
+  if (!canAnswer) return;
+  canAnswer = false;
+
+  const correctIdx = quizData[currentQ].correct;
+  const allBtns = document.getElementById('quizLive').querySelectorAll('button');
+
+  if (selectedIdx === correctIdx) {
+    score++;
+    btn.style.background = "#2e7d32"; // Hijau kalau betul
+    btn.style.borderColor = "#4caf50";
+    btn.innerHTML += " <span style='float:right;'>✓ Correct</span>";
+  } else {
+    btn.style.background = "#c62828"; // Merah kalau salah
+    btn.style.borderColor = "#ef5350";
+    btn.innerHTML += " <span style='float:right;'>✗ Incorrect</span>";
+    
+    // Tunjuk jawapan betul
+    allBtns[correctIdx].style.background = "#2e7d32";
+    allBtns[correctIdx].style.borderColor = "#4caf50";
+  }
+
+  // Auto Next lepas 1.2 saat (Tak payah scroll/tekan next)
+  setTimeout(() => {
+    currentQ++;
+    if (currentQ < quizData.length) {
+      renderQuestion();
+    } else {
+      showResult();
+    }
+  }, 1200);
+}
+
+function startQuiz() {
+  currentQ = 0;
+  score = 0;
+  document.getElementById('quizResult').style.display = 'none';
+  document.getElementById('quizLive').style.display = 'block';
+  renderQuestion();
+}
+
+startQuiz();
   </script>
   
   <!-- AOS Animation JS -->
