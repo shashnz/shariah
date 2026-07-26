@@ -6,7 +6,19 @@
 <title>Shariah Compliance in Islamic Banking — e-Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<style>/* KEMASKINI KHAS UNTUK SECTION 3 & 4 SUPAYA DUDUK TENGAH */
+#analysis, #products, 
+#analysis .content-card, #products .content-card,
+#analysis .section-container, #products .section-container {
+  max-width: 900px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  float: none !important;
+  width: 100% !important;
+  box-sizing: border-box;
+  text-align: left;
+}
   :root{
     --emerald-deep:#0e3a3a;
     --emerald-mid:#175349;
@@ -767,7 +779,7 @@
 </section>
 
 -<!-- CRITICAL ANALYSIS -->
-<section id="analysis" style="
+<section id="analysis" data-aos="fade-up" style="
   position: relative;
   background: linear-gradient(rgba(15, 32, 23, 0.8), rgba(15, 32, 23, 0.9)), 
               url('https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=1600&q=80');
@@ -1027,7 +1039,7 @@
 </section>
 
 <!-- SECTION: CASE STUDY / SNC INCOME DISCLOSURE -->
-<section id="case-study" style="
+<section id="analysis" data-aos="fade-up" style="
   position: relative;
   background: #ffffff;
   padding: 3.5rem 2.5rem;
@@ -1667,6 +1679,14 @@
   }
 
   startQuiz();
+  <!-- AOS Animation JS -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+</script>
 </script>
 </body>
 </html>
